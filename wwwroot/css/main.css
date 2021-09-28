@@ -1,0 +1,28 @@
+﻿body {
+    background-color: #e4e4e4;
+    color: #1e1f22;
+}
+.container{
+    display: flex;
+}
+footer {
+    background-color: #dddeda;
+}
+footer a {
+    padding: 0 8px 0 8px;
+    opacity: 0.7;
+    color: #1e1f22;
+    font-size: 1.4em;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+footer i {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+footer a:hover {
+    color: #286ea8;
+    transition: 0.2s ease-in-out;
+}
