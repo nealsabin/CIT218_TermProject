@@ -1,0 +1,28 @@
+﻿@model Ride
+@{
+    string title = ViewBag.Action + " Ride"; ViewBag.Title = title;
+}
+<h2>@ViewBag.Title</h2>
+<form asp-action="Edit" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Days">Days</label>
+        <input asp-for="Days" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Miles">Miles</label>
+        <input asp-for="Miles" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" class="form-control">
+    </div>
+    <input type="hidden" asp-for="RideId" />
+    <button type="submit" class="btn btn-primary">@ViewBag.Action</button>
+    <a asp-controller="Ride" asp-action="Index" class="btn btn-primary">Cancel</a>
+</form>

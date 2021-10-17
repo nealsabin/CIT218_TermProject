@@ -1,0 +1,35 @@
+﻿@model List<Ride>
+@{
+    ViewBag.Title = "My Rides";
+}
+
+<h2>Ride List</h2>
+
+<a asp-controller="Ride" asp-action="Add">Add New Ride</a>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Days</th>
+            <th>Miles</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ride in Model)
+        {
+            <tr>
+                <td>@ride.Name</td>
+                <td>@ride.Days</td>
+                <td>@ride.Miles</td>
+                <td>@ride.Description</td>
+                <td>
+                    <a asp-controller="Ride" asp-action="Edit" asp-route-id="@ride.RideId">Edit</a>
+                    <a asp-controller="Ride" asp-action="Delete" asp-route-id="@ride.RideId">Delete</a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>

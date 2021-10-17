@@ -1,0 +1,10 @@
+﻿@model Ride
+@{
+    ViewBag.Title = "Delete Ride";
+}
+<h2>Confirm Deletion</h2>
+<h3>@Model.Name (@Model.Days)</h3>
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="RideId" />
+    <button type="submit" class="btn btn-primary">Delete</button> <a asp-controller="Ride" asp-action="Index" class="btn btn-primary">Cancel</a>
+</form>
