@@ -4,8 +4,11 @@
 }
 
 <h2>Ride List</h2>
+<div style="display: flex; flex-direction: column">
+    <a asp-controller="Ride" asp-action="Add">Add New Ride</a>
+    <a asp-controller="Difficulty" asp-action="Index">Add New Difficulty Rating</a>
+</div>
 
-<a asp-controller="Ride" asp-action="Add">Add New Ride</a>
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
