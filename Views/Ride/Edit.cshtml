@@ -15,6 +15,16 @@
         <input asp-for="Days" class="form-control">
     </div>
     <div class="form-group">
+        <label asp-for="DifficultyId">Difficulty</label>
+        <select asp-for="DifficultyId" class="form-control">
+            <option value=""></option>
+            @foreach (Difficulty d in ViewBag.Difficulties)
+            {
+                <option value="@d.DifficultyId">@d.Rating</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
         <label asp-for="Miles">Miles</label>
         <input asp-for="Miles" class="form-control">
     </div>

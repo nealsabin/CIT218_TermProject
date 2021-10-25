@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using TermProject.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace TermProject.Controllers
 {

@@ -23,5 +23,9 @@ namespace TermProject.Models
 
         [Required(ErrorMessage = "Please enter a description.")]
         public string Description { get; set; }
+
+        [Required(ErrorMessage = "Please enter a difficulty rating.")]
+        public string DifficultyId { get; set; }
+        public Difficulty Difficulty { get; set; }
     }
 }

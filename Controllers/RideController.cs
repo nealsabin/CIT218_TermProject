@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using TermProject.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace MovieList.Controllers
 {
@@ -14,7 +15,8 @@ namespace MovieList.Controllers
         }
         public IActionResult Index()
         {
-            var rides = context.Rides.OrderBy(r => r.Name).ToList();
+            //var rides = context.Rides.OrderBy(r => r.Name).ToList();
+            var rides = context.Rides.Include(r => r.Difficulty).OrderBy(r => r.DifficultyId).ToList();
             return View(rides);
         }
 
@@ -22,6 +24,7 @@ namespace MovieList.Controllers
         public IActionResult Add()
         {
             ViewBag.Action = "Add";
+            ViewBag.Difficulties = context.Difficulties.OrderBy(r => r.DifficultyId).ToList();
             return View("Edit", new Ride());
         }
 
@@ -29,6 +32,7 @@ namespace MovieList.Controllers
         public IActionResult Edit(int id)
         {
             ViewBag.Action = "Edit";
+            ViewBag.Difficulties = context.Difficulties.OrderBy(r => r.DifficultyId).ToList();
             var ride = context.Rides.Find(id);
             return View(ride);
         }
@@ -48,6 +52,7 @@ namespace MovieList.Controllers
             else
             {
                 ViewBag.Action = (ride.RideId == 0) ? "Add" : "Edit";
+                ViewBag.Difficulties = context.Difficulties.OrderBy(r => r.DifficultyId).ToList();
                 return View(ride);
             }
         }
