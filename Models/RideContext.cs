@@ -29,8 +29,10 @@ namespace TermProject.Models
                     RideId = 1,
                     Name = "Around Superior",
                     Days = 16,
+                    State = "MI",
                     Miles = 1200,
                     Description = "This bikepacking trip takes your around the largest lake by surface in the world.",
+                    StartDate = new DateTime(2020,4,10),
                     DifficultyId = "3"
                 },
                 new Ride
@@ -38,8 +40,10 @@ namespace TermProject.Models
                     RideId = 2,
                     Name = "Leelanau Peninsula",
                     Days = 3,
+                    State = "MI",
                     Miles = 180,
                     Description = "A trip around the scenic Leelanau Peninsula.",
+                    StartDate = new DateTime(2020, 7, 11),
                     DifficultyId = "1"
                 },
                 new Ride
@@ -47,8 +51,10 @@ namespace TermProject.Models
                     RideId = 3,
                     Name = "Huron Mountains",
                     Days = 4,
+                    State = "MI",
                     Miles = 210,
                     Description = "A rugged, remote trip awaits with this route around the Huron Mountains, in the Upper Peninsula of Michigan.",
+                    StartDate = new DateTime(2018, 6, 20),
                     DifficultyId = "2"
                 },
                 new Ride
@@ -56,8 +62,10 @@ namespace TermProject.Models
                     RideId = 4,
                     Name = "Keweenaw Peninsula",
                     Days = 5,
+                    State = "MI",
                     Miles = 220,
                     Description = "You will encounter some of the most beautiful coastline Michigan has to offer in this trip.",
+                    StartDate = new DateTime(2019, 9, 1),
                     DifficultyId = "2"
                 }
                 );
