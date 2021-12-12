@@ -42,5 +42,10 @@ namespace TermProject.Models
         [ForeignKey("DifficultyID")]
         public string DifficultyId { get; set; }
         public Difficulty Difficulty { get; set; }
+
+        [Required(ErrorMessage = "Please enter a bike.")]
+        [ForeignKey("BikeId")]
+        public int BikeId { get; set; }
+        public Bike Bike { get; set; }
     }
 }
