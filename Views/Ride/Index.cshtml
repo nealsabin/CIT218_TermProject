@@ -6,7 +6,6 @@
 <h2>Ride List</h2>
 <div style="display: flex; flex-direction: column">
     <a asp-controller="Ride" asp-action="Add">Add New Ride</a>
-    <a asp-controller="Difficulty" asp-action="Index">Add New Difficulty Rating</a>
 </div>
 
 <form asp-action="Index" method="get">
@@ -26,28 +25,28 @@
                 <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Trip Name</a>
                 @*@Html.DisplayName("Trip Name")*@
             </th>
-            <th>Days</th>
-            <th>Difficulty</th>
             <th>Miles</th>
-            <th>Description</th>
+            <th>Days</th>
+            <th>Start Date</th>
+            <th>State</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var ride in Model)
         {
-            <tr>
-                <td>@ride.Name</td>
-                <td>@ride.Days</td>
-                <td>@ride.Difficulty.Rating</td>
-                <td>@ride.Miles</td>
-                <td>@ride.Description</td>
-                <td>
-                    <a asp-controller="Ride" asp-action="Details" asp-route-id="@ride.RideId">Edit</a>
-                    <a asp-controller="Ride" asp-action="Edit" asp-route-id="@ride.RideId">Edit</a>
-                    <a asp-controller="Ride" asp-action="Delete" asp-route-id="@ride.RideId">Delete</a>
-                </td>
-            </tr>
+        <tr>
+            <td>@ride.Name</td>
+            <td>@ride.Miles</td>
+            <td>@ride.Days</td>
+            <td>@ride.StartDate.ToShortDateString()</td>
+            <td>@ride.State</td>
+            <td>
+                <a asp-controller="Ride" asp-action="Details" asp-route-id="@ride.RideId">Details</a> | 
+                <a asp-controller="Ride" asp-action="Edit" asp-route-id="@ride.RideId">Edit</a> |
+                <a asp-controller="Ride" asp-action="Delete" asp-route-id="@ride.RideId">Delete</a>
+            </td>
+        </tr>
 
         }
     </tbody>

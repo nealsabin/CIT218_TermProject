@@ -57,22 +57,25 @@ namespace MovieList.Controllers
             return View(await PaginatedList<Ride>.CreateAsync(rides.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
-        //public async Task<IActionResult> Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
+        // GET: RidesController2/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-        //    var ride = await context.Rides
-        //        .Include(r => r.Difficulty);
-        //    if (ride == null)
-        //    {
-        //        return NotFound();
-        //    }
+            var ride = await context.Rides
+                .Include(r => r.Bike)
+                .Include(r => r.Difficulty)
+                .FirstOrDefaultAsync(m => m.RideId == id);
+            if (ride == null)
+            {
+                return NotFound();
+            }
 
-        //    return View(ride);
-        //}
+            return View(ride);
+        }
 
         [HttpGet]
         public IActionResult Add()

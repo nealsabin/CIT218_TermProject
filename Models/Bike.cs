@@ -14,7 +14,7 @@ namespace TermProject.Models
 
         [Required(ErrorMessage = "Please enter a value for make.")]
         [RegularExpression("^[a-zA-Z]*$", ErrorMessage = "Only alphabetic letters are allowed.")]
-        [Display(Name = "Bike Make")]
+        [Display(Name = "Make")]
         [Column("Bike Make")]
         [StringLength(50)]
         public string Make { get; set; }
@@ -24,6 +24,7 @@ namespace TermProject.Models
         public string Model { get; set; }
 
         [Required(ErrorMessage = "Please enter a value for wheel size.")]
+        [Display(Name = "Wheel Size")]
         public double WheelSize { get; set; }
 
     }

@@ -2,6 +2,14 @@
     ViewData["Title"] = "Home Page";
 }
 
+<style>
+    img{
+        /*margin: 5px;*/
+        padding: 10px;
+        border-radius: 30px;
+    }
+</style>
+
 <div class="jumbotron shadow" style="background-color: #F4F4F4; border-radius: 25px;">
     <h1>Bikepacking Log</h1>
     <p class="lead">
@@ -11,17 +19,18 @@
 </div>
 <div class="row">
     <div class="col-sm-6">
-        <h2>Logging Trips</h2>
+        <h2>Log Trips</h2>
         <p>Keep track of your trips by inputing route information.</p>
     </div>
+
     <div class="col-sm-6">
-        <h2>Upload Images</h2>
-        <p>Attach images to trip log to keep track of those memorable moments.</p>
+        <h2>Track Bikes</h2>
+        <p>Keep track of the bikes you utilize on trips.</p>
     </div>
 </div>
-<div class="row">
+<div class = "row jumbotron shadow" style="background-color: #F4F4F4; border-radius: 25px; padding: 5px;">
     <img src="~/images/bike1.jpg" alt="bikes" asp-append-version="true"
-         class="float-left img-fluid col-sm-6  shadow rounded-sm" style="width:100%;" />
+         class="float-left img-fluid col-sm-6" style="width:75%;" />
     <img src="~/images/bike2.jpg" alt="bikes" asp-append-version="true"
-         class="float-left img-fluid col-sm-6  shadow rounded-sm" style="width:100%;" />
+         class="float-left img-fluid col-sm-6" style="width:75%;" />
 </div>
